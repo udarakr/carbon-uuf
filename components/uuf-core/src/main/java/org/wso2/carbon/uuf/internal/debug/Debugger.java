@@ -62,11 +62,11 @@ public class Debugger {
     // TODO: 12/07/2016 uncomment this once osgi issue solved for DebugAppender
     //private final DebugAppender debugAppender;
 
-    public Debugger() {
+ /*   public Debugger() {
         // TODO: 12/07/2016 uncomment this once osgi issue solved for DebugAppender
         //this.debugAppender = new DebugAppender("debugger", "");
         //this.debugAppender.attach();
-    }
+    }*/
 
     public void serve(App app, HttpRequest request, HttpResponse response) {
         String uriWithoutContextPath = request.getUriWithoutContextPath();

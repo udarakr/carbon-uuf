@@ -119,10 +119,15 @@
                         <Import-Package>
                             org.apache.logging.log4j.core.*,
                             org.apache.logging.log4j.core.util.*,
+                            com.google.gson.*;version=2.6.2,
                         </Import-Package>
                         <Export-Package>
-                            !org.wso2.carbon.uuf.debug.appender
+                            !org.wso2.carbon.uuf.debug.appender,
+                            org.wso2.carbon.uuf.debug.spi,
                         </Export-Package>
+<!--
+                        <Bundle-Activator>org.wso2.carbon.uuf.debug.appender.Activator</Bundle-Activator>
+-->
                         <Fragment-Host>org.ops4j.pax.logging.pax-logging-log4j2</Fragment-Host>
                     </instructions>
                 </configuration>

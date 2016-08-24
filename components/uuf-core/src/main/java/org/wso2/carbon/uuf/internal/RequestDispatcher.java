@@ -39,26 +39,35 @@ import static org.wso2.carbon.uuf.spi.HttpResponse.STATUS_INTERNAL_SERVER_ERROR;
 import static org.wso2.carbon.uuf.spi.HttpResponse.STATUS_MOVED_PERMANENTLY;
 import static org.wso2.carbon.uuf.spi.HttpResponse.STATUS_OK;
 
+//import org.wso2.carbon.uuf.debug.appender.HTTPAppender;
+
+
 public class RequestDispatcher {
 
     private static final Logger log = LoggerFactory.getLogger(RequestDispatcher.class);
 
     private final StaticResolver staticResolver;
-    private final Debugger debugger;
+   private final Debugger debugger;
 
     public RequestDispatcher() {
         this(new StaticResolver(), (Debugger.isDebuggingEnabled() ? new Debugger() : null));
     }
+
 
     public RequestDispatcher(StaticResolver staticResolver, Debugger debugger) {
         this.staticResolver = staticResolver;
         this.debugger = debugger;
     }
 
+
+
     public void serve(App app, HttpRequest request, HttpResponse response) {
-        if (log.isDebugEnabled() && !request.isDebugRequest()) {
+        //HTTPAppender.getMessagesAsJson();
+
+        // if (log.isDebugEnabled() && !request.isDebugRequest()) {
             log.debug("HTTP request received " + request);
-        }
+        log.info("This is a info " + request);
+       // }
 
         try {
             if (request.isStaticResourceRequest()) {

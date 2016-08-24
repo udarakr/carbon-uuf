@@ -129,7 +129,7 @@
                             org.apache.commons.io,
                             org.apache.log4j.*,
                             org.slf4j.*;version="${slf4j.version.range}",
-                            org.yaml.snakeyaml
+                            org.yaml.snakeyaml,
                         </Import-Package>
                         <Private-Package>org.wso2.carbon.uuf.internal.*</Private-Package>
                         <Export-Package>

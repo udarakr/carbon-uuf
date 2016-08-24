@@ -32,8 +32,8 @@ public class DebugAppender extends AbstractAppender {
 
     private static final int MAX_CAPACITY = 1000;
 
-    private static Queue<DebugMessage> messages;
-    private static Gson gson;
+    private Queue<DebugMessage> messages;
+    private Gson gson;
 
     protected DebugAppender(String name, Filter filter,
                              Layout<? extends Serializable> layout, final boolean ignoreExceptions) {
@@ -68,7 +68,8 @@ public class DebugAppender extends AbstractAppender {
 //        Logger.getRootLogger().removeAppender(this);
     }
 
-    public static String getMessagesAsJson() {
+
+    public String getMessagesAsJson() {
         return gson.toJson(messages);
     }
 

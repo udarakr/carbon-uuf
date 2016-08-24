@@ -38,14 +38,14 @@ public class HTTPAppender extends AbstractAppender {
 
     private static final int MAX_CAPACITY = 1000;
    // private static final Logger log = LoggerFactory.getLogger(HTTPAppender.class);
-    private Queue<DebugMessage> messages;
-    //private  Gson gson;
+    private static Queue<DebugMessage> messages;
+    private static Gson gson;
 
     protected HTTPAppender(String name,
                            org.apache.logging.log4j.core.Filter filter, Layout<? extends Serializable> layout, final boolean ignoreExceptions) {
         super(name, filter, layout, ignoreExceptions);
         this.messages = new ConcurrentLinkedQueue<>();
-       // this.gson = new Gson();
+        this.gson = new Gson();
 
        // log.debug("This is a debug");
     }
@@ -64,8 +64,14 @@ public class HTTPAppender extends AbstractAppender {
                 messages.poll();
             }
         }
-        System.out.println(" Event appending... " + event);
+
+       // System.out.println(" Event appending... " + event);
     }
+
+    public static String getMessagesAsJson() {
+        return gson.toJson(messages);
+    }
+
 
     private static class DebugMessage {
 
