@@ -103,6 +103,16 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.0.2</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -127,7 +137,7 @@
                             com.google.gson.*;version="${gson.version}",
                             org.apache.commons.lang3.*,
                             org.apache.commons.io,
-                            org.apache.log4j.*,
+                            org.apache.logging.log4j.core.*,
                             org.slf4j.*;version="${slf4j.version.range}",
                             org.yaml.snakeyaml
                         </Import-Package>

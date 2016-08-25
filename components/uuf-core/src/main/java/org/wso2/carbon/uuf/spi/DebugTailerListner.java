@@ -1,0 +1,14 @@
+package org.wso2.carbon.uuf.spi;
+
+/**
+ * Provides listener notification methods when a tailed log file is updated
+ */
+public interface DebugTailerListner
+{
+    /**
+     * A new line has been added to the tailed log file
+     *
+     * @param line   The new line that has been added to the tailed log file
+     */
+    public void newLogFileLine( String line );
+}
